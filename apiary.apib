@@ -1,8 +1,8 @@
 FORMAT: 1A
-HOST: http://www.google.com
+HOST: http://apistaging.yoolk.com
 
 # Yoolk REST API
-Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+An API for Yoolk
 
 # Group Notes
 Notes related resources of the **Notes API**
@@ -11,20 +11,34 @@ Notes related resources of the **Notes API**
 ### List all Notes [GET]
 + Response 200 (application/json)
 
-        [{
-          "id": 1, "title": "Jogging in park"
-        }, {
-          "id": 2, "title": "Pick-up posters from post-office"
-        }]
+        [
+          {
+            "id": 1, "title": "Jogging in park", text: "Just awesome", score: 1
+          },
+          {
+            "id": 2, "title": "Pick-up posters from post-office", title: "Never been good", score: 2
+          }
+        ]
 
 ### Create a Note [POST]
 + Request (application/json)
 
-        { "title": "Buy cheese and bread for breakfast." }
+        {
+          "note": {
+            "title": "Look this way",
+            "text": "I think it's good",
+            score: 6
+          }
+        }
 
 + Response 201 (application/json)
 
-        { "id": 3, "title": "Buy cheese and bread for breakfast." }
+        {
+          "id": 3,
+          "title": "Look this way",
+          "text": "I think it's good",
+          score: 6
+        }
 
 ## Note [/notes/{id}]
 A single Note object with all its details
@@ -41,7 +55,12 @@ A single Note object with all its details
 
     + Body
 
-            { "id": 2, "title": "Pick-up posters from post-office" }
+            {
+              "id": 3,
+              "title": "Look this way",
+              "text": "I think it's good",
+              score: 6
+            }
 
 ### Remove a Note [DELETE]
 + Response 204
