@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Note.create([
+  { title: 'Interview', text: 'Looking for a way to handle it', score: 1 },
+  { title: 'How to be a pro', text: 'Keep practicing and never give up', score: 2 },
+  { title: 'Sleep like a habit', text: 'Keep your sleeping schedule on time', score: 3 },
+])
